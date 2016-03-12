@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Java EE 6-Java EE 6">
+    <archive path="C:/Users/Léo/workspace/CARATEST/lib/javax.annotation.jar" />
+    <archive path="C:/Users/Léo/workspace/CARATEST/lib/javax.jms.jar" />
+    <archive path="C:/Users/Léo/workspace/CARATEST/lib/javax.transaction.jar" />
+    <archive path="C:/Users/Léo/workspace/CARATEST/lib/javax.persistence.jar" />
+    <archive path="C:/Users/Léo/workspace/CARATEST/lib/javax.resource.jar" />
+    <archive path="C:/Users/Léo/workspace/CARATEST/lib/javax.servlet.jsp.jstl.jar" />
+  </library>
+</eclipse-userlibraries>
+
