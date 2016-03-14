@@ -7,8 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%
-  response.setStatus(response.SC_MOVED_PERMANENTLY);
-  response.setHeader("Location", "/WebApplication/welcome");
-%>
+<head>
+    <title>Bienvenue ${user.nom}</title>
+</head>
+<body>
+Salut ${user.nom} <a class="button" href="/WebApplication/logout">Se déconnecter</a>
+</body>
 </html>

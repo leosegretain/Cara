@@ -1,5 +1,7 @@
 package beans;
 
+import entities.user.CaraUser;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,16 +16,16 @@ public class UserBean implements UserRemote {
     @PersistenceContext(unitName = "Assurances-ejbPU")
     EntityManager persistance;
 
-    public boolean authenticate(String nom, String password) {
+    public CaraUser findByName(String name) {
 
         try {
-            Query q = persistance.createNamedQuery("findUser");//.setParameter("nom", nom);
+            Query q = persistance.createNamedQuery("findUserByName").setParameter("nom", name);
             Object userBdd = q.getResultList().get(0);
             int i = 0;
-            return false;//userBdd.getMotDePasse().equals(password);
+            return (CaraUser) userBdd;
         } catch (Exception e) {
 
-            return false;
+            return null;
         }
     }
 }

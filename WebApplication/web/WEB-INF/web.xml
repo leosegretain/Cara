@@ -8,9 +8,18 @@
         <servlet-name>UserServlet</servlet-name>
     </servlet>
 
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
-        <url-pattern>/user</url-pattern>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
     <login-config>
@@ -28,16 +37,10 @@
             <url-pattern>/*</url-pattern>
         </web-resource-collection>
 
-        <web-resource-collection>
-            <web-resource-name>Contrats</web-resource-name>
-            <url-pattern>/user</url-pattern>
-        </web-resource-collection>
         <auth-constraint>
-
             <role-name>ADMIN</role-name>
             <role-name>COURTIER</role-name>
             <role-name>ASSURE</role-name>
-
         </auth-constraint>
     </security-constraint>
 

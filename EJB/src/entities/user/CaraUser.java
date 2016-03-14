@@ -11,6 +11,9 @@ import java.util.List;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="DTYPE_USER")
+@NamedQueries(
+        @NamedQuery(name = "findUserByName", query = "SELECT u FROM CaraUser u where u.nom = :nom")
+)
 public class CaraUser {
 
     @Id
