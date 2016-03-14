@@ -25,8 +25,12 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Principal user = request.getUserPrincipal();
-        CaraUser caraUser = userRemote.findByName(user.getName());
-        request.setAttribute("user", caraUser);
-        request.getRequestDispatcher("welcome.jsp").forward(request, response);
+
+        if (user != null) {
+
+            CaraUser caraUser = userRemote.findByName(user.getName());
+            request.setAttribute("user", caraUser);
+            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+        }
     }
 }
