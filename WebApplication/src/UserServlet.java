@@ -29,7 +29,8 @@ public class UserServlet extends HttpServlet {
         if (user != null) {
 
             CaraUser caraUser = userRemote.findByName(user.getName());
-            request.setAttribute("user", caraUser);
+
+            request.getSession(true).setAttribute("user", caraUser);
             request.getRequestDispatcher("welcome.jsp").forward(request, response);
         }
     }

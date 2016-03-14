@@ -8,4 +8,6 @@ import entities.user.CaraUser;
 public interface UserRemote {
 
     public CaraUser findByName(String name);
+
+    public CaraUser add(CaraUser caraUser);
 }

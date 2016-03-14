@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="942441551">
+    <data-source source="LOCAL" name="Derby (Remote) - Assurances@localhost" uuid="461fcc4b-8397-4503-8905-bef493b65993">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/Assurances</jdbc-url>
+    </data-source>
+  </component>
+</project>

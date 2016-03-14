@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Derby (Remote) - Assurances@localhost" uuid="461fcc4b-8397-4503-8905-bef493b65993">
+    <database-info product="Apache Derby" version="10.9.1.0 - (1344872)" jdbc-version="4.2" driver-name="Apache Derby Network Client JDBC Driver" driver-version="10.11.1.1 - (1616546)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="APP" catalog=""/>
+    <schema name="CARATP1" catalog=""/>
+    <table name="CARAGROUP" schema="CARATP1" catalog="" type="TABLE">
+      <column name="NOM" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="SQL160308113014270" columns="NOM"/>
+      <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
+      <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
+      <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
+      <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
+    </table>
+    <table name="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" type="TABLE">
+      <column name="USERS_NOM" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="GROUPS_NOM" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="SQL160308113014370" columns="USERS_NOM,GROUPS_NOM"/>
+      <foreign-key name="CRGRPCRAUSERGRPSNM" columns="GROUPS_NOM" ref-table="CARAGROUP" ref-schema="CARATP1" ref-catalog="" ref-columns="NOM" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="CRGRPCARAUSERSRSNM" columns="USERS_NOM" ref-table="CARAUSER" ref-schema="CARATP1" ref-catalog="" ref-columns="NOM" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="CARAUSER" schema="CARATP1" catalog="" type="TABLE">
+      <column name="NOM" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="DTYPE_USER" sqlType="VARCHAR" precision="31" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EMAIL" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="MOTDEPASSE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PRENOM" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ADRESSE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SQL160308113014090" columns="NOM"/>
+      <exported-key name="CRGRPCARAUSERSRSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="USERS_NOM"/>
+      <exported-key name="CRSRCARAUSERSSRSNM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="ASSURES_NOM"/>
+      <exported-key name="CRSRCRSERSRCRTRNOM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="USERCOURTIER_NOM"/>
+      <exported-key name="CRSRCNTRATSRSSRNOM" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+      <exported-key name="CNTRATSERASSURENOM" table="CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+      <exported-key name="CRGRPCARAUSERSRSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="USERS_NOM"/>
+      <exported-key name="CRSRCARAUSERSSRSNM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="ASSURES_NOM"/>
+      <exported-key name="CRSRCRSERSRCRTRNOM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="USERCOURTIER_NOM"/>
+      <exported-key name="CRSRCNTRATSRSSRNOM" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+      <exported-key name="CNTRATSERASSURENOM" table="CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+      <exported-key name="CRGRPCARAUSERSRSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="USERS_NOM"/>
+      <exported-key name="CRSRCARAUSERSSRSNM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="ASSURES_NOM"/>
+      <exported-key name="CRSRCRSERSRCRTRNOM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="USERCOURTIER_NOM"/>
+      <exported-key name="CRSRCNTRATSRSSRNOM" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+      <exported-key name="CNTRATSERASSURENOM" table="CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+      <exported-key name="CRGRPCARAUSERSRSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="USERS_NOM"/>
+      <exported-key name="CRSRCARAUSERSSRSNM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="ASSURES_NOM"/>
+      <exported-key name="CRSRCRSERSRCRTRNOM" table="CARAUSER_CARAUSER" schema="CARATP1" catalog="" columns="USERCOURTIER_NOM"/>
+      <exported-key name="CRSRCNTRATSRSSRNOM" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+      <exported-key name="CNTRATSERASSURENOM" table="CONTRAT" schema="CARATP1" catalog="" columns="USERASSURE_NOM"/>
+    </table>
+    <table name="CARAUSER_CARAUSER" schema="CARATP1" catalog="" type="TABLE">
+      <column name="USERCOURTIER_NOM" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ASSURES_NOM" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="SQL160308113014480" columns="USERCOURTIER_NOM,ASSURES_NOM"/>
+      <foreign-key name="CRSRCARAUSERSSRSNM" columns="ASSURES_NOM" ref-table="CARAUSER" ref-schema="CARATP1" ref-catalog="" ref-columns="NOM" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="CRSRCRSERSRCRTRNOM" columns="USERCOURTIER_NOM" ref-table="CARAUSER" ref-schema="CARATP1" ref-catalog="" ref-columns="NOM" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="CARAUSER_CONTRAT" schema="CARATP1" catalog="" type="TABLE">
+      <column name="USERASSURE_NOM" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CONTRATS_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="SQL160308113014430" columns="USERASSURE_NOM,CONTRATS_ID"/>
+      <foreign-key name="CRSRCNTRATSRSSRNOM" columns="USERASSURE_NOM" ref-table="CARAUSER" ref-schema="CARATP1" ref-catalog="" ref-columns="NOM" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="CRSRCONTRATCNTRTSD" columns="CONTRATS_ID" ref-table="CONTRAT" ref-schema="CARATP1" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="CATEGORIECONTRAT" schema="CARATP1" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NOM" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SQL160308113014310" columns="ID"/>
+      <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
+      <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
+      <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
+      <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
+    </table>
+    <table name="CONTRAT" schema="CARATP1" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DTYPE_CONTRAT" sqlType="VARCHAR" precision="31" scale="0" nullable="true" jdbcType="12"/>
+      <column name="MONTANT" sqlType="DOUBLE" precision="52" scale="0" nullable="true" jdbcType="8"/>
+      <column name="TYPECONTRAT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="USERASSURE_NOM" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ADRESSE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="MONTANTASSUREMAX" sqlType="DOUBLE" precision="52" scale="0" nullable="true" jdbcType="8"/>
+      <column name="IMMATRICULATION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="MODELEAUTOMOBILE" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="NOMCONDUCTEURPRINCIPAL" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DUREECOTISATIONMIN" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="MONTANTCAPITAL" sqlType="DOUBLE" precision="52" scale="0" nullable="true" jdbcType="8"/>
+      <primary-key name="SQL160308113014040" columns="ID"/>
+      <foreign-key name="CNTRATSERASSURENOM" columns="USERASSURE_NOM" ref-table="CARAUSER" ref-schema="CARATP1" ref-catalog="" ref-columns="NOM" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="CNTRATTYPCONTRATID" columns="TYPECONTRAT_ID" ref-table="TYPECONTRAT" ref-schema="CARATP1" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
+      <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
+      <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
+      <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
+    </table>
+    <table name="SEQUENCE" schema="CARATP1" catalog="" type="TABLE">
+      <column name="SEQ_NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="SEQ_COUNT" sqlType="DECIMAL" precision="15" scale="0" nullable="true" jdbcType="3"/>
+      <primary-key name="SQL160308113014930" columns="SEQ_NAME"/>
+    </table>
+    <table name="TYPECONTRAT" schema="CARATP1" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="MONTANTMIN" sqlType="DOUBLE" precision="52" scale="0" nullable="true" jdbcType="8"/>
+      <column name="CATEGORIECONTRAT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="SQL160308113014190" columns="ID"/>
+      <foreign-key name="TYPCNTRTCTGRCNTRTD" columns="CATEGORIECONTRAT_ID" ref-table="CATEGORIECONTRAT" ref-schema="CARATP1" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
+      <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
+      <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
+      <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
+    </table>
+  </data-source>
+</component>

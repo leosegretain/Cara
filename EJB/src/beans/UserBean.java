@@ -28,4 +28,17 @@ public class UserBean implements UserRemote {
             return null;
         }
     }
+
+    public CaraUser add(CaraUser caraUser) {
+
+        try {
+            Query q = persistance.createNamedQuery("add").setParameter("nom", name);
+            Object userBdd = q.getResultList().get(0);
+            int i = 0;
+            return (CaraUser) userBdd;
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
 }

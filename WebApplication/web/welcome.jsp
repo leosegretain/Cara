@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Bienvenue ${user.nom}</title>
+    <title>Bienvenue ${sessionScope.user.nom}</title>
 </head>
 <body>
 Salut ${user.nom} <a class="button" href="/WebApplication/logout">Se déconnecter</a>
+
+<a class="button" href="/WebApplication/userAdd">Ajouter un user (Admin)</a>
+
+
 </body>
 </html>

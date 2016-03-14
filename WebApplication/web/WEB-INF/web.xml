@@ -9,12 +9,21 @@
     </servlet>
 
     <servlet>
+        <servlet-name>UserAddServlet</servlet-name>
+    </servlet>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserAddServlet</servlet-name>
+        <url-pattern>/userAdd</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
