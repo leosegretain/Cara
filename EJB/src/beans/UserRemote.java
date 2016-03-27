@@ -1,6 +1,8 @@
 package beans;
 
 import entities.user.CaraUser;
+import entities.user.UserAssure;
+import entities.user.UserCourtier;
 
 import java.util.List;
 
@@ -17,5 +19,7 @@ public interface UserRemote {
 
     public List<CaraUser> list();
 
-    public List<CaraUser> listAssures();
+    public List<UserAssure> listAssures();
+
+    public List<UserCourtier> listCourtiers();
 }
