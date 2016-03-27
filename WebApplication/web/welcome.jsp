@@ -27,7 +27,7 @@ Salut ${user.nom}
 
 <a class="button" href="/assure/contrats">Liste contrats (Assure)</a><br/>
 <a class="button" href="/assure/attente/contrats">Liste contrats en attente (Assure)</a><br/>
-<a class="button" href="/assure/demandeContrat">Demande de contrat (Assure)</a><br/><br/><br/>saint
+<a class="button" href="/assure/demandeContrat">Demande de contrat (Assure)</a><br/><br/><br/>
 
 </body>
 </html>

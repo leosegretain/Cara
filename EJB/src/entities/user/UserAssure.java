@@ -4,6 +4,7 @@ import entities.contrats.Contrat;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.Collection;
 
@@ -18,6 +19,9 @@ public class UserAssure extends CaraUser {
     private Collection<Contrat> contrats;
 
     private String adresse;
+
+    @ManyToOne
+    private UserCourtier courtier;
 
     public UserAssure() {
     }
@@ -48,5 +52,13 @@ public class UserAssure extends CaraUser {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    public UserCourtier getCourtier() {
+        return courtier;
+    }
+
+    public void setCourtier(UserCourtier courtier) {
+        this.courtier = courtier;
     }
 }

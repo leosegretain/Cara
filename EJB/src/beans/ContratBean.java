@@ -33,6 +33,19 @@ public class ContratBean implements ContratRemote {
         }
     }
 
+    @RolesAllowed("ASSURE")
+    public List<Contrat> findByAssure(String nom) {
+
+        try {
+            Query q = persistance.createNamedQuery("findContratsByAssure").setParameter("nom", nom);
+            List<Contrat> contrats = q.getResultList();
+            return contrats;
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
+
     @RolesAllowed("COURTIER")
     public void add(Contrat contrat) {
 

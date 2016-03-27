@@ -14,49 +14,33 @@
 </head>
 <body>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <table>
 
-<form action="/contratAdd" method="POST">
+        <thead>
+            <th>Référence</th>
+            <th>Type</th>
+            <th>Catégorie</th>
+            <th>Montant</th>
+            <th></th>
+        </thead>
 
-    Information contrat :
-    <p>
-        Type de contrat :
-        <select name="typeContrat">
-            <c:forEach items="${contratTypes}" var="u">
-                <option value="${u.id}">${u.categorieContrat} - ${u.id}</option>
+        <tbody>
+            <c:forEach items="${contrats}" var="c">
+                <tr>
+                    <td>${c.id}</td>
+                    <td>${c.typeContrat.id}</td>
+                    <td>${c.typeContrat.categorieContrat}</td>
+                    <td>${c.montant}</td>
+                    <td>
+                        <form action="/assure/stop" method="POST">
+                            <button type="submit">Stopper</button>
+                        </form>
+                    </td>
+                </tr>
             </c:forEach>
-        </select><br/>
+        </tbody>
 
-        Montant : <input type="number" name="montant"/><br/>
+    </table>
 
-        Assuré :
-        <select name="assure">
-            <c:forEach items="${assures}" var="u">
-                <option value="${u.nom}">${u.nom}</option>
-            </c:forEach>
-        </select><br/>
-    </p>
-
-    Information Auto (si Contrat Automobile) :
-    <p>
-        Modèle voiture : <input type="text" name="modele"/><br/>
-        Immatriculation : <input type="text" name="immat"/><br/>
-        Conducteur principal : <input type="text" name="conducteur"/><br/>
-    </p>
-
-    Information Vie (si Contrat Vie) :
-    <p>
-        Montant capital : <input type="number" name="capital"/><br/>
-        Durée de cotisation : <input type="number" name="duree"/><br/>
-    </p>
-
-    Information Habitation (si Contrat Habitation) :
-    <p>
-        Montant maximum : <input type="number" name="montantMax"/><br/>
-        Adresse : <input type="text" name="adresse"/><br/>
-    </p>
-
-    <input type="submit" value="Ajouter"/><br/>
-</form>
 </body>
 </html>

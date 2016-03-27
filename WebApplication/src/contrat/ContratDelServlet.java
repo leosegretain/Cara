@@ -32,7 +32,7 @@ public class ContratDelServlet extends HttpServlet {
         Contrat contrat = contratRemote.findById(contratId);
         contratRemote.delete(contrat);
 
-        request.getRequestDispatcher("welcome.jsp").forward(request, response);
+        request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

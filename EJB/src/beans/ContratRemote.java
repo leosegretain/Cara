@@ -11,6 +11,8 @@ public interface ContratRemote {
 
     public Contrat findById(int id);
 
+    public List<Contrat> findByAssure(String nom);
+
     public void add(Contrat contrat);
 
     public void delete(Contrat contrat);

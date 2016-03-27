@@ -12,7 +12,8 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "DTYPE_CONTRAT")
 @NamedQueries({
         @NamedQuery(name = "findContratById", query = "SELECT u FROM Contrat u where u.id = :id"),
-        @NamedQuery(name = "findAllContrats", query = "select u from Contrat u")
+        @NamedQuery(name = "findAllContrats", query = "select u from Contrat u"),
+        @NamedQuery(name = "findContratsByAssure", query = "select u from Contrat u where u.userAssure.nom = :nom")
 })
 public class Contrat {
 

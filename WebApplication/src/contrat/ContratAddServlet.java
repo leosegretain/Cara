@@ -96,7 +96,7 @@ public class ContratAddServlet extends HttpServlet {
                 break;
         }
 
-        request.getRequestDispatcher("welcome.jsp").forward(request, response);
+        request.getRequestDispatcher("/welcome").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

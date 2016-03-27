@@ -1,6 +1,10 @@
-package user;
+package assure;
 
+import entities.contrats.Contrat;
 import entities.user.CaraUser;
+import entities.user.UserAdmin;
+import entities.user.UserAssure;
+import entities.user.UserCourtier;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -11,28 +15,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "UserDelServlet", urlPatterns = "/user/delete")
+@WebServlet(name = "AssureContratsServlet", urlPatterns = "/assure/contrats")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,
-                rolesAllowed = {"ADMIN"}))
-public class UserDelServlet extends HttpServlet {
+                rolesAllowed = {"ASSURE"}))
+public class AssureContratsServlet extends HttpServlet {
 
     @EJB(beanName = "UserEJB")
     private beans.UserRemote userRemote;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @EJB(beanName = "ContratEJB")
+    private beans.ContratRemote contratRemote;
 
-        String nom = request.getParameter("nom");
-        CaraUser caraUser = userRemote.findByName(nom);
-        userRemote.delete(caraUser);
-
-        request.getRequestDispatcher("/welcome.jsp").forward(request, response);
-    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -40,8 +41,9 @@ public class UserDelServlet extends HttpServlet {
 
         if (user != null) {
 
-            request.setAttribute("users", userRemote.list());
-            request.getRequestDispatcher("delete.jsp").forward(request, response);
+            List<Contrat> contrats = contratRemote.findByAssure(user.getNom());
+            request.setAttribute("contrats", contrats);
+            request.getRequestDispatcher("contrats.jsp").forward(request, response);
         }
     }
 }
