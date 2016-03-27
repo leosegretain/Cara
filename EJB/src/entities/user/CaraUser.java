@@ -3,7 +3,6 @@ package entities.user;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by leo on 31/01/2016.
@@ -11,9 +10,10 @@ import java.util.List;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="DTYPE_USER")
-@NamedQueries(
-        @NamedQuery(name = "findUserByName", query = "SELECT u FROM CaraUser u where u.nom = :nom")
-)
+@NamedQueries({
+        @NamedQuery(name = "findUserByName", query = "SELECT u FROM CaraUser u where u.nom = :nom"),
+        @NamedQuery(name = "findAllUsers", query = "select u from CaraUser u")
+})
 public class CaraUser {
 
     @Id
@@ -28,10 +28,6 @@ public class CaraUser {
 
     @Column(name="DTYPE_USER",insertable=false, updatable=false)
     private String discriminator;
-
-    @JoinColumn(name = "NOM")
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "users")
-    private List<CaraGroup> groups;
 
     public CaraUser() {
     }
@@ -81,11 +77,4 @@ public class CaraUser {
         this.discriminator = discriminator;
     }
 
-    public List<CaraGroup> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(List<CaraGroup> groups) {
-        this.groups = groups;
-    }
 }

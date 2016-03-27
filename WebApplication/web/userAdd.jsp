@@ -13,7 +13,7 @@
 <body>
 <form action="/WebApplication/userAdd" method="POST">
 
-    Nom : <input type="text" name="nom"/> <br/>
+    Nom : <input type="text" id="nom" name="nom"/> <br/>
     Prénom : <input type="text" name="prenom"/><br/>
     E-mail : <input type="text" name="email"/><br/>
     Mot de passe : <input type="text" name="motdepasse"/><br/>

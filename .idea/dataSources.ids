@@ -11,9 +11,6 @@
       <column name="NOM" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="SQL160308113014270" columns="NOM"/>
       <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
-      <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
-      <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
-      <exported-key name="CRGRPCRAUSERGRPSNM" table="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" columns="GROUPS_NOM"/>
     </table>
     <table name="CARAGROUP_CARAUSER" schema="CARATP1" catalog="" type="TABLE">
       <column name="USERS_NOM" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
@@ -70,9 +67,6 @@
       <column name="NOM" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="SQL160308113014310" columns="ID"/>
       <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
-      <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
-      <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
-      <exported-key name="TYPCNTRTCTGRCNTRTD" table="TYPECONTRAT" schema="CARATP1" catalog="" columns="CATEGORIECONTRAT_ID"/>
     </table>
     <table name="CONTRAT" schema="CARATP1" catalog="" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -91,9 +85,6 @@
       <foreign-key name="CNTRATSERASSURENOM" columns="USERASSURE_NOM" ref-table="CARAUSER" ref-schema="CARATP1" ref-catalog="" ref-columns="NOM" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="CNTRATTYPCONTRATID" columns="TYPECONTRAT_ID" ref-table="TYPECONTRAT" ref-schema="CARATP1" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
-      <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
-      <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
-      <exported-key name="CRSRCONTRATCNTRTSD" table="CARAUSER_CONTRAT" schema="CARATP1" catalog="" columns="CONTRATS_ID"/>
     </table>
     <table name="SEQUENCE" schema="CARATP1" catalog="" type="TABLE">
       <column name="SEQ_NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
@@ -107,9 +98,6 @@
       <column name="CATEGORIECONTRAT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="SQL160308113014190" columns="ID"/>
       <foreign-key name="TYPCNTRTCTGRCNTRTD" columns="CATEGORIECONTRAT_ID" ref-table="CATEGORIECONTRAT" ref-schema="CARATP1" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
-      <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
-      <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
       <exported-key name="CNTRATTYPCONTRATID" table="CONTRAT" schema="CARATP1" catalog="" columns="TYPECONTRAT_ID"/>
     </table>
   </data-source>
