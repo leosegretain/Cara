@@ -1,3 +1,7 @@
+/EJB/EJB.iml
+/EJB/EJB.eml
+/WebApplication/WebApplication.eml
+/WebApplication/WebApplication.iml
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -15,3 +19,6 @@ hs_err_pid*
 #conf idea
 .idea/
 ./CARATEST*
+.lib/
+*.eml
+.*/*.iml
