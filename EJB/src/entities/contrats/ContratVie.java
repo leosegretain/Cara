@@ -13,6 +13,21 @@ public class ContratVie extends Contrat {
     private double montantCapital;
     private int dureeCotisationMin;
 
+    public ContratVie() {
+    }
+
+    public ContratVie(Contrat contrat) {
+
+        this.setTypeContrat(contrat.getTypeContrat());
+        this.setUserAssure(contrat.getUserAssure());
+
+        try {
+            this.setMontant(contrat.getMontant());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public double getMontantCapital() {
         return montantCapital;
     }
