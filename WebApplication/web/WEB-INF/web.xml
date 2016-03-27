@@ -49,6 +49,14 @@
     </servlet>
 
     <servlet>
+        <servlet-name>CourtierValidationServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CourtierSupprimerServlet</servlet-name>
+    </servlet>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
     </servlet>
 
@@ -105,6 +113,17 @@
     <servlet-mapping>
         <servlet-name>CourtierClientsServlet</servlet-name>
         <url-pattern>/courtier/clients</url-pattern>
+        <url-pattern>/courtier/client/contrats</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CourtierValidationServlet</servlet-name>
+        <url-pattern>/courtier/valider</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CourtierSupprimerServlet</servlet-name>
+        <url-pattern>/courtier/supprimer</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

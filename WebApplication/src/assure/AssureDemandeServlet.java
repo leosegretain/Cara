@@ -36,7 +36,6 @@ public class AssureDemandeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int typeContratId = Integer.parseInt(request.getParameter("typeContrat").toString());
-        double montant = Double.parseDouble(request.getParameter("montant").toString());
 
         Contrat contrat = new Contrat();
 
@@ -46,12 +45,6 @@ public class AssureDemandeServlet extends HttpServlet {
         contrat.setTypeContrat(typeContrat);
         contrat.setUserAssure(user);
         contrat.setEnAttente(true);
-
-        try {
-            contrat.setMontant(montant);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         switch (typeContrat.getCategorieContrat().name()) {
 

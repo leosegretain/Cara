@@ -109,4 +109,14 @@ public class Contrat {
         else
             return "Souscrit";
     }
+
+    public int getEtatNumber() {
+
+        if (this.isDemandeArret)
+            return 0;
+        else if (this.isEnAttente)
+            return 1;
+        else
+            return 2;
+    }
 }

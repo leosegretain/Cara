@@ -40,7 +40,7 @@ public class ContratBean implements ContratRemote {
         persistance.persist(toBePersist);
     }
 
-    @RolesAllowed("ASSURE")
+    @RolesAllowed({"ASSURE", "COURTIER"})
     public List<Contrat> findByAssure(String nom) {
 
         try {
@@ -54,7 +54,7 @@ public class ContratBean implements ContratRemote {
         }
     }
 
-    @RolesAllowed("ASSURE")
+    @RolesAllowed({"ASSURE", "COURTIER"})
     public List<Contrat> findEnAttenteByAssure(String nom) {
 
         try {
