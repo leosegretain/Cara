@@ -45,7 +45,7 @@ public class ContratTypeBean implements ContratTypeRemote {
         persistance.remove(toBeRemoved);
     }
 
-    @RolesAllowed({"ADMIN", "COURTIER"})
+    @RolesAllowed({"ADMIN", "ASSURE", "COURTIER"})
     public List<TypeContrat> list() {
 
         try {

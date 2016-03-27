@@ -12,7 +12,9 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "DTYPE_CONTRAT")
 @NamedQueries({
         @NamedQuery(name = "findContratById", query = "SELECT u FROM Contrat u where u.id = :id"),
-        @NamedQuery(name = "findAllContrats", query = "select u from Contrat u")
+        @NamedQuery(name = "findAllContrats", query = "select u from Contrat u"),
+        @NamedQuery(name = "findContratsByAssure", query = "select u from Contrat u where u.userAssure.nom = :nom and u.isDemandeArret = false and u.isEnAttente = false"),
+        @NamedQuery(name = "findContratsEnAttenteByAssure", query = "select u from Contrat u where u.userAssure.nom = :nom and u.isDemandeArret = true or u.isEnAttente = true")
 })
 public class Contrat {
 
@@ -29,8 +31,14 @@ public class Contrat {
     @ManyToOne
     private TypeContrat typeContrat;
 
+    @Column(name = "IS_DEMANDE_ARRET")
+    private boolean isDemandeArret = false;
+
     @Column(name = "DTYPE_CONTRAT", insertable = false, updatable = false)
     private String discriminator;
+
+    @Column(name = "IS_EN_ATTENTE")
+    private boolean isEnAttente = false;
 
     public int getId() {
         return id;
@@ -74,5 +82,31 @@ public class Contrat {
 
     public void setDiscriminator(String discriminator) {
         this.discriminator = discriminator;
+    }
+
+    public boolean isDemandeArret() {
+        return isDemandeArret;
+    }
+
+    public void setDemandeArret(boolean demandeArret) {
+        isDemandeArret = demandeArret;
+    }
+
+    public boolean isEnAttente() {
+        return isEnAttente;
+    }
+
+    public void setEnAttente(boolean enAttente) {
+        isEnAttente = enAttente;
+    }
+
+    public String getEtat() {
+
+        if (this.isDemandeArret)
+            return "En attente de résiliation";
+        else if (this.isEnAttente)
+            return "En attente d'ouverture";
+        else
+            return "Souscrit";
     }
 }

@@ -33,6 +33,22 @@
     </servlet>
 
     <servlet>
+        <servlet-name>AssureContratsServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AssureStopServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AssureDemandeServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CourtierClientsServlet</servlet-name>
+    </servlet>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
     </servlet>
 
@@ -69,6 +85,26 @@
     <servlet-mapping>
         <servlet-name>ContratTypeDelServlet</servlet-name>
         <url-pattern>/contrat/type/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AssureContratsServlet</servlet-name>
+        <url-pattern>/assure/contrats</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AssureStopServlet</servlet-name>
+        <url-pattern>/assure/stop</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AssureDemandeServlet</servlet-name>
+        <url-pattern>/assure/demande</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CourtierClientsServlet</servlet-name>
+        <url-pattern>/courtier/clients</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

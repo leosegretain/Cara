@@ -21,6 +21,7 @@ public class ContratAutomobile extends Contrat {
 
         this.setTypeContrat(contrat.getTypeContrat());
         this.setUserAssure(contrat.getUserAssure());
+        this.setEnAttente(contrat.isEnAttente());
 
         try {
             this.setMontant(contrat.getMontant());

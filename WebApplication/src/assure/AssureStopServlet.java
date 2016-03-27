@@ -1,5 +1,6 @@
-package user;
+package assure;
 
+import entities.contrats.Contrat;
 import entities.user.CaraUser;
 
 import javax.ejb.EJB;
@@ -11,37 +12,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "UserDelServlet", urlPatterns = "/user/delete")
+@WebServlet(name = "AssureStopServlet", urlPatterns = "/assure/stop")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,
-                rolesAllowed = {"ADMIN"}))
-public class UserDelServlet extends HttpServlet {
+                rolesAllowed = {"ASSURE"}))
+public class AssureStopServlet extends HttpServlet {
 
     @EJB(beanName = "UserEJB")
     private beans.UserRemote userRemote;
 
+    @EJB(beanName = "ContratEJB")
+    private beans.ContratRemote contratRemote;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String nom = request.getParameter("nom");
-        CaraUser caraUser = userRemote.findByName(nom);
-        userRemote.delete(caraUser);
+        int contratId = Integer.parseInt(request.getParameter("contrat"));
+        Contrat contrat = contratRemote.findById(contratId);
+        contrat.setDemandeArret(true);
+        contratRemote.save(contrat);
 
         request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        CaraUser user = (CaraUser) request.getSession().getAttribute("user");
-
-        if (user != null) {
-
-            request.setAttribute("users", userRemote.list());
-            request.getRequestDispatcher("delete.jsp").forward(request, response);
-        }
-    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 }

@@ -33,7 +33,7 @@ public class ContratTypeDelServlet extends HttpServlet {
         TypeContrat typeContrat = contratTypeRemote.findById(id);
         contratTypeRemote.delete(typeContrat);
 
-        request.getRequestDispatcher("welcome.jsp").forward(request, response);
+        request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

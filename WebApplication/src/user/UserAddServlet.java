@@ -37,6 +37,7 @@ public class UserAddServlet extends HttpServlet {
         String motdepasse = request.getParameter("motdepasse").toString();
         String adresse = request.getParameter("adresse").toString();
         String dtype = request.getParameter("dtype").toString();
+        String courtier = request.getParameter("courtier").toString();
 
         CaraUser caraUser = new CaraUser();
         caraUser.setNom(nom);
@@ -48,23 +49,29 @@ public class UserAddServlet extends HttpServlet {
 
             case "ADMINISTRATEUR":
                 UserAdmin userAdmin = new UserAdmin(caraUser);
+
                 userRemote.add(userAdmin);
                 break;
 
             case "ASSURE":
                 UserAssure userAssure = new UserAssure(caraUser);
+
+                UserCourtier dedicatedCourtier = new UserCourtier(userRemote.findByName(courtier));
                 userAssure.setAdresse(adresse);
+                userAssure.setCourtier(dedicatedCourtier);
+
                 userRemote.add(userAssure);
                 break;
 
             case "COURTIER":
                 UserCourtier userCourtier = new UserCourtier(caraUser);
+
                 userRemote.add(userCourtier);
                 break;
 
         }
 
-        request.getRequestDispatcher("welcome.jsp").forward(request, response);
+        request.getRequestDispatcher("//welcome.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

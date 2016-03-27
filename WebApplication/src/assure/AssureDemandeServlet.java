@@ -1,11 +1,7 @@
-package contrat;
+package assure;
 
-import beans.ContratRemote;
-import beans.ContratTypeRemote;
-import beans.UserRemote;
 import entities.contrats.*;
 import entities.user.CaraUser;
-import entities.user.UserAssure;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -21,35 +17,35 @@ import java.util.List;
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "ContratAddServlet", urlPatterns = "/contrat/add")
+@WebServlet(name = "AssureDemandeServlet", urlPatterns = "/assure/demande")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,
-                rolesAllowed = {"COURTIER"}))
-public class ContratAddServlet extends HttpServlet {
+                rolesAllowed = {"ASSURE"}))
+public class AssureDemandeServlet extends HttpServlet {
 
     @EJB(beanName = "ContratEJB")
-    private ContratRemote contratRemote;
-
-    @EJB(beanName = "UserEJB")
-    private UserRemote userRemote;
+    private beans.ContratRemote contratRemote;
 
     @EJB(beanName = "ContratTypeEJB")
-    private ContratTypeRemote contratTypeRemote;
+    private beans.ContratTypeRemote contratTypeRemote;
+
+    @EJB(beanName = "UserEJB")
+    private beans.UserRemote userRemote;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String assureName = request.getParameter("assure").toString();
         int typeContratId = Integer.parseInt(request.getParameter("typeContrat").toString());
         double montant = Double.parseDouble(request.getParameter("montant").toString());
 
         Contrat contrat = new Contrat();
 
         TypeContrat typeContrat = contratTypeRemote.findById(typeContratId);
-        CaraUser caraUser = userRemote.findByName(assureName);
+        CaraUser user = (CaraUser) request.getSession().getAttribute("user");
 
         contrat.setTypeContrat(typeContrat);
-        contrat.setUserAssure(caraUser);
+        contrat.setUserAssure(user);
+        contrat.setEnAttente(true);
 
         try {
             contrat.setMontant(montant);
@@ -99,18 +95,5 @@ public class ContratAddServlet extends HttpServlet {
         request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        CaraUser user = (CaraUser) request.getSession().getAttribute("user");
-
-        if (user != null) {
-
-            List<UserAssure> assures = userRemote.listAssures();
-            List<TypeContrat> types = contratTypeRemote.list();
-
-            request.setAttribute("assures", assures);
-            request.setAttribute("contratTypes", types);
-            request.getRequestDispatcher("add.jsp").forward(request, response);
-        }
-    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 }
