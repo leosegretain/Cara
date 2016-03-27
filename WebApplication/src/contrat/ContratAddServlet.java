@@ -1,8 +1,11 @@
+package contrat;
+
 import beans.ContratRemote;
 import beans.ContratTypeRemote;
 import beans.UserRemote;
 import entities.contrats.*;
 import entities.user.CaraUser;
+import entities.user.UserAssure;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -18,7 +21,7 @@ import java.util.List;
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "ContratAddServlet", urlPatterns = "/contratAdd")
+@WebServlet(name = "ContratAddServlet", urlPatterns = "/contrat/add")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,
@@ -102,12 +105,12 @@ public class ContratAddServlet extends HttpServlet {
 
         if (user != null) {
 
-            List<CaraUser> assures = userRemote.listAssures();
+            List<UserAssure> assures = userRemote.listAssures();
             List<TypeContrat> types = contratTypeRemote.list();
 
             request.setAttribute("assures", assures);
             request.setAttribute("contratTypes", types);
-            request.getRequestDispatcher("contratAdd.jsp").forward(request, response);
+            request.getRequestDispatcher("add.jsp").forward(request, response);
         }
     }
 }

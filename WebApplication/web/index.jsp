@@ -9,6 +9,6 @@
 <html>
 <%
   response.setStatus(response.SC_MOVED_PERMANENTLY);
-  response.setHeader("Location", "/WebApplication/welcome");
+  response.setHeader("Location", "/welcome");
 %>
 </html>

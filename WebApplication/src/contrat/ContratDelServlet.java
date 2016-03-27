@@ -1,3 +1,6 @@
+package contrat;
+
+import entities.contrats.Contrat;
 import entities.user.CaraUser;
 
 import javax.ejb.EJB;
@@ -13,21 +16,21 @@ import java.io.IOException;
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "UserDelServlet", urlPatterns = "/userDel")
+@WebServlet(name = "ContratDelServlet", urlPatterns = "/contrat/delete")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,
-                rolesAllowed = {"ADMIN"}))
-public class UserDelServlet extends HttpServlet {
+                rolesAllowed = {"COURTIER"}))
+public class ContratDelServlet extends HttpServlet {
 
-    @EJB(beanName = "UserEJB")
-    private beans.UserRemote userRemote;
+    @EJB(beanName = "ContratEJB")
+    private beans.ContratRemote contratRemote;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String nom = request.getParameter("nom");
-        CaraUser caraUser = userRemote.findByName(nom);
-        userRemote.delete(caraUser);
+        int contratId = Integer.parseInt(request.getParameter("contratId"));
+        Contrat contrat = contratRemote.findById(contratId);
+        contratRemote.delete(contrat);
 
         request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
@@ -38,8 +41,8 @@ public class UserDelServlet extends HttpServlet {
 
         if (user != null) {
 
-            request.setAttribute("users", userRemote.list());
-            request.getRequestDispatcher("userDel.jsp").forward(request, response);
+            request.setAttribute("contrats", contratRemote.list());
+            request.getRequestDispatcher("delete.jsp").forward(request, response);
         }
     }
 }

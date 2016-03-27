@@ -15,7 +15,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<form action="/WebApplication/contratAdd" method="POST">
+<form action="/contrat/add" method="POST">
 
     Information contrat :
     <p>

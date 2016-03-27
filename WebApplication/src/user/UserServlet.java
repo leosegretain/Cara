@@ -1,3 +1,5 @@
+package user;
+
 import entities.user.CaraUser;
 
 import javax.ejb.EJB;

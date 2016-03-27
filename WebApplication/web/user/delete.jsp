@@ -10,17 +10,17 @@
 
 <html>
 <head>
-    <title>Supression d'un contrat type</title>
+    <title>Supression d'un utilisateur</title>
 </head>
 <body>
 
-<form action="/WebApplication/contratTypeDel" method="POST">
+<form action="/user/delete" method="POST">
 
     Utilisateurs :
 
-    <select name="id">
-        <c:forEach items="${contratTypes}" var="u">
-            <option value="${u.id}">${u.categorieContrat} - ${u.id}</option>
+    <select name="nom">
+        <c:forEach items="${users}" var="u">
+            <option value="${u.nom}">${u.discriminator} - ${u.nom}</option>
         </c:forEach>
     </select><br/>
 

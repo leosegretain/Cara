@@ -11,7 +11,7 @@
     <title>Ajout d'un contrat type</title>
 </head>
 <body>
-<form action="/WebApplication/contratTypeAdd" method="POST">
+<form action="/contrat/type/add" method="POST">
 
     Catégorie :
 

@@ -43,37 +43,37 @@
 
     <servlet-mapping>
         <servlet-name>UserAddServlet</servlet-name>
-        <url-pattern>/userAdd</url-pattern>
+        <url-pattern>/user/add</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>UserDelServlet</servlet-name>
-        <url-pattern>/userDel</url-pattern>
+        <url-pattern>/user/delete</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ContratAddServlet</servlet-name>
-        <url-pattern>/contratAdd</url-pattern>
+        <url-pattern>/contrat/add</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ContratDelServlet</servlet-name>
-        <url-pattern>/contratDel</url-pattern>
+        <url-pattern>/contrat/delete</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ContratTypeAddServlet</servlet-name>
-        <url-pattern>/contratTypeAdd</url-pattern>
+        <url-pattern>/contrat/type/add</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ContratTypeDelServlet</servlet-name>
-        <url-pattern>/contratTypeDel</url-pattern>
+        <url-pattern>/contrat/type/delete</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/logout</url-pattern>
+        <url-pattern>/user/logout</url-pattern>
     </servlet-mapping>
 
     <login-config>

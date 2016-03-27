@@ -1,3 +1,5 @@
+package contrat;
+
 import beans.ContratTypeRemote;
 import entities.contrats.TypeContrat;
 import entities.user.CaraUser;
@@ -15,22 +17,42 @@ import java.io.IOException;
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "ContratTypeDelServlet", urlPatterns = "/contratTypeDel")
+@WebServlet(name = "ContratTypeAddServlet", urlPatterns = "/contrat/type/add")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,
                 rolesAllowed = {"ADMIN"}))
-public class ContratTypeDelServlet extends HttpServlet {
+public class ContratTypeAddServlet extends HttpServlet {
 
     @EJB(beanName = "ContratTypeEJB")
     private ContratTypeRemote contratTypeRemote;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
-        TypeContrat typeContrat = contratTypeRemote.findById(id);
-        contratTypeRemote.delete(typeContrat);
+        String categorie = request.getParameter("categorie").toString();
+        String description = request.getParameter("description").toString();
+        double montantMin = Double.parseDouble(request.getParameter("montantMin").toString());
 
+        TypeContrat typeContrat = new TypeContrat();
+        typeContrat.setDescription(description);
+        typeContrat.setMontantMin(montantMin);
+
+        switch (categorie) {
+
+            case "AUTOMOBILE":
+                typeContrat.setCategorieContrat(TypeContrat.CategorieContrat.AUTOMOBILE);
+                break;
+
+            case "VIE":
+                typeContrat.setCategorieContrat(TypeContrat.CategorieContrat.VIE);
+                break;
+
+            case "HABITATION":
+                typeContrat.setCategorieContrat(TypeContrat.CategorieContrat.HABITATION);
+                break;
+        }
+
+        contratTypeRemote.add(typeContrat);
         request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
 
@@ -40,8 +62,7 @@ public class ContratTypeDelServlet extends HttpServlet {
 
         if (user != null) {
 
-            request.setAttribute("contratTypes", contratTypeRemote.list());
-            request.getRequestDispatcher("contratTypeDel.jsp").forward(request, response);
+            request.getRequestDispatcher("add.jsp").forward(request, response);
         }
     }
 }
