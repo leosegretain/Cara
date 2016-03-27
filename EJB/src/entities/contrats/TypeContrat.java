@@ -1,22 +1,23 @@
-package entities;
+package entities.contrats;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * Created by leo on 31/01/2016.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "findContratTypeById", query = "SELECT u FROM TypeContrat u where u.id = :id"),
+        @NamedQuery(name = "findAllContratsType", query = "select u from TypeContrat u")
+})
 public class TypeContrat {
 
     @Id
+    @GeneratedValue
     private int id;
-
     private String description;
     private double montantMin;
-
-    @ManyToOne
+    @Enumerated(EnumType.STRING)
     private CategorieContrat categorieContrat;
 
     public int getId() {
@@ -49,5 +50,11 @@ public class TypeContrat {
 
     public void setCategorieContrat(CategorieContrat categorieContrat) {
         this.categorieContrat = categorieContrat;
+    }
+
+    public enum CategorieContrat {
+        AUTOMOBILE,
+        VIE,
+        HABITATION
     }
 }

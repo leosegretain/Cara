@@ -12,7 +12,7 @@ import java.security.Principal;
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "UserServlet")
+@WebServlet(name = "UserServlet", urlPatterns = "/welcome")
 public class UserServlet extends HttpServlet {
 
     @EJB(beanName = "UserEJB")

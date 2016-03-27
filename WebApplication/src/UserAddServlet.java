@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "UserAddServlet")
+@WebServlet(name = "UserAddServlet", urlPatterns = "/userAdd")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,

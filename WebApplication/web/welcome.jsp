@@ -11,10 +11,19 @@
     <title>Bienvenue ${sessionScope.user.nom}</title>
 </head>
 <body>
-Salut ${user.nom} <a class="button" href="/WebApplication/logout">Se déconnecter</a>
+Salut ${user.nom}
 
-<a class="button" href="/WebApplication/userAdd">Ajouter un user (Admin)</a>
+<br/>
+<a class="button" href="/WebApplication/logout">Se déconnecter</a><br/>
 
+<a class="button" href="/WebApplication/userAdd">Ajouter un user (Admin)</a><br/>
+<a class="button" href="/WebApplication/userDel">Supprimer un user (Admin)</a><br/>
+
+<a class="button" href="/WebApplication/contratTypeAdd">Ajouter un type de contrat (Admin)</a><br/>
+<a class="button" href="/WebApplication/contratTypeDel">Supprimer un type de contrat (Admin)</a><br/>
+
+<a class="button" href="/WebApplication/contratAdd">Ajouter un contrat (Admin)</a><br/>
+<a class="button" href="/WebApplication/contratDel">Supprimer un contrat (Admin)</a><br/>
 
 </body>
 </html>
