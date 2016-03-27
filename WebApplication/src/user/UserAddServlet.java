@@ -1,3 +1,5 @@
+package user;
+
 import entities.user.CaraUser;
 import entities.user.UserAdmin;
 import entities.user.UserAssure;
@@ -12,11 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by Léo on 09/02/2016.
  */
-@WebServlet(name = "UserAddServlet", urlPatterns = "/userAdd")
+@WebServlet(name = "UserAddServlet", urlPatterns = "/user/add")
 @ServletSecurity(
         @HttpConstraint(transportGuarantee =
                 ServletSecurity.TransportGuarantee.CONFIDENTIAL,
@@ -70,7 +73,9 @@ public class UserAddServlet extends HttpServlet {
 
         if (user != null) {
 
-            request.getRequestDispatcher("userAdd.jsp").forward(request, response);
+            List<UserCourtier> courtiers = userRemote.listCourtiers();
+            request.setAttribute("courtiers", courtiers);
+            request.getRequestDispatcher("add.jsp").forward(request, response);
         }
     }
 }
