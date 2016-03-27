@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="ear" build-on-make="true" name="CARATEST">
+    <output-path>$PROJECT_DIR$/out/artifacts/CARATEST</output-path>
+    <root id="archive" name="CARATEST.ear">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="archive" name="WebApplication.jar">
+          <element id="module-output" name="WebApplication" />
+          <element id="javaee-facet-resources" facet="WebApplication/web/Web" />
+        </element>
+        <element id="archive" name="EJB.jar">
+          <element id="module-output" name="EJB" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          <element id="javaee-facet-resources" facet="EJB/ejb/EJB" />
+          <element id="jpa-descriptors" facet="EJB/jpa/JPA" />
+        </element>
+        <element id="library" level="project" name="commons-codec-1.10" />
+        <element id="library" level="project" name="javax.servlet.jsp.jstl-1.2.1" />
+      </element>
+      <element id="artifact" artifact-name="EJB" />
+      <element id="artifact" artifact-name="WebApplication" />
+    </root>
+  </artifact>
+</component>

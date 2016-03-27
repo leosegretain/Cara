@@ -7,10 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-   Salut toi
-  </body>
+<%
+  response.setStatus(response.SC_MOVED_PERMANENTLY);
+  response.setHeader("Location", "/WebApplication/welcome");
+%>
 </html>
