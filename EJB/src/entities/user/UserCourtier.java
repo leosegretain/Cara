@@ -19,6 +19,14 @@ public class UserCourtier extends CaraUser {
     public UserCourtier() {
     }
 
+    public UserCourtier(CaraUser caraUser) {
+
+        this.setNom(caraUser.getNom());
+        this.setPrenom(caraUser.getPrenom());
+        this.setEmail(caraUser.getEmail());
+        this.setMotDePasse(caraUser.getMotDePasse());
+    }
+
     public UserCourtier(String email, String motDePasse) {
         super(email, motDePasse);
     }

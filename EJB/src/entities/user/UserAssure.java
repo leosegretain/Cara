@@ -2,7 +2,9 @@ package entities.user;
 
 import entities.contrats.Contrat;
 
-import javax.persistence.*;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.Collection;
 
 /**
@@ -18,6 +20,14 @@ public class UserAssure extends CaraUser {
     private String adresse;
 
     public UserAssure() {
+    }
+
+    public UserAssure(CaraUser caraUser) {
+
+        this.setNom(caraUser.getNom());
+        this.setPrenom(caraUser.getPrenom());
+        this.setEmail(caraUser.getEmail());
+        this.setMotDePasse(caraUser.getMotDePasse());
     }
 
     public UserAssure(String email, String motDePasse) {

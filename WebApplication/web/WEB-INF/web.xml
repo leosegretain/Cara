@@ -8,9 +8,72 @@
         <servlet-name>UserServlet</servlet-name>
     </servlet>
 
+    <servlet>
+        <servlet-name>UserAddServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UserDelServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ContratAddServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ContratDelServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ContratTypeAddServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ContratTypeDelServlet</servlet-name>
+    </servlet>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
-        <url-pattern>/user</url-pattern>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserAddServlet</servlet-name>
+        <url-pattern>/userAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UserDelServlet</servlet-name>
+        <url-pattern>/userDel</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ContratAddServlet</servlet-name>
+        <url-pattern>/contratAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ContratDelServlet</servlet-name>
+        <url-pattern>/contratDel</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ContratTypeAddServlet</servlet-name>
+        <url-pattern>/contratTypeAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ContratTypeDelServlet</servlet-name>
+        <url-pattern>/contratTypeDel</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
     <login-config>
@@ -28,16 +91,10 @@
             <url-pattern>/*</url-pattern>
         </web-resource-collection>
 
-        <web-resource-collection>
-            <web-resource-name>Contrats</web-resource-name>
-            <url-pattern>/user</url-pattern>
-        </web-resource-collection>
         <auth-constraint>
-
             <role-name>ADMIN</role-name>
             <role-name>COURTIER</role-name>
             <role-name>ASSURE</role-name>
-
         </auth-constraint>
     </security-constraint>
 
