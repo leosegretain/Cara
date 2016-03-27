@@ -44,7 +44,8 @@ public class UserAddServlet extends HttpServlet {
         switch (dtype) {
 
             case "ADMINISTRATEUR":
-                userRemote.add((UserAdmin) caraUser);
+                UserAdmin userAdmin = new UserAdmin(caraUser);
+                userRemote.add(userAdmin);
                 break;
 
             case "ASSURE":
@@ -54,10 +55,13 @@ public class UserAddServlet extends HttpServlet {
                 break;
 
             case "COURTIER":
-                userRemote.add((UserCourtier) caraUser);
+                UserCourtier userCourtier = new UserCourtier(caraUser);
+                userRemote.add(userCourtier);
                 break;
 
         }
+
+        request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

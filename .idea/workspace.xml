@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3acd325-3a2b-4e10-8a0a-dc7cc1d82fa9" name="Default" comment="redirection pour palier au / qui ne passe pas par le ServLet">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javax_servlet_jsp_jstl_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebApplication/src/UserDelServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebApplication/web/userDel.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EJB/src/entities/user/CaraGroup.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/EJB/src/entities/user/UserAddServlet.java" afterPath="$PROJECT_DIR$/WebApplication/src/UserAddServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CARATEST.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CARATEST.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+    <list default="true" id="e3acd325-3a2b-4e10-8a0a-dc7cc1d82fa9" name="Default" comment="[LSG] : Ajout et remove d'utilisateur ok admin only">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJB/src/beans/UserBean.java" afterPath="$PROJECT_DIR$/EJB/src/beans/UserBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJB/src/beans/UserRemote.java" afterPath="$PROJECT_DIR$/EJB/src/beans/UserRemote.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJB/src/entities/user/CaraUser.java" afterPath="$PROJECT_DIR$/EJB/src/entities/user/CaraUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJB/src/entities/user/UserAssure.java" afterPath="$PROJECT_DIR$/EJB/src/entities/user/UserAssure.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApplication/WebApplication.iml" afterPath="$PROJECT_DIR$/WebApplication/WebApplication.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApplication/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WebApplication/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApplication/web/userAdd.jsp" afterPath="$PROJECT_DIR$/WebApplication/web/userAdd.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJB/src/entities/user/UserAdmin.java" afterPath="$PROJECT_DIR$/EJB/src/entities/user/UserAdmin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EJB/src/entities/user/UserCourtier.java" afterPath="$PROJECT_DIR$/EJB/src/entities/user/UserCourtier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApplication/src/UserAddServlet.java" afterPath="$PROJECT_DIR$/WebApplication/src/UserAddServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebApplication/src/UserDelServlet.java" afterPath="$PROJECT_DIR$/WebApplication/src/UserDelServlet.java" />
     </list>
     <list id="b403654e-7a61-472f-a4b2-35a884b4025f" name="Ignored" comment="" />
     <ignored path="CARATEST.iws" />
@@ -101,31 +89,42 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="UserAddServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication/src/UserAddServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CARATP1.CARAUSER" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/c926ef74/461fcc4b-8397-4503-8905-bef493b65993/CARATP1.CARAUSER">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserAdmin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EJB/src/entities/user/UserAdmin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserDelServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebApplication/src/UserDelServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserBean.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EJB/src/beans/UserBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40246046">
-              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userDel.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebApplication/web/userDel.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462">
-              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -188,16 +187,16 @@
         <option value="$PROJECT_DIR$/EJB/src/entities/user/UseDelServlet.java" />
         <option value="$PROJECT_DIR$/WebApplication/src/UseDelServlet.java" />
         <option value="$PROJECT_DIR$/WebApplication/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/WebApplication/src/UserAddServlet.java" />
         <option value="$PROJECT_DIR$/WebApplication/src/UserServlet.java" />
         <option value="$PROJECT_DIR$/EJB/src/entities/user/CaraUser.java" />
-        <option value="$PROJECT_DIR$/EJB/src/entities/user/UserAdmin.java" />
         <option value="$PROJECT_DIR$/EJB/src/entities/user/UserAssure.java" />
-        <option value="$PROJECT_DIR$/EJB/src/entities/user/UserCourtier.java" />
         <option value="$PROJECT_DIR$/WebApplication/web/userDel.jsp" />
         <option value="$PROJECT_DIR$/EJB/src/beans/UserRemote.java" />
-        <option value="$PROJECT_DIR$/WebApplication/src/UserDelServlet.java" />
         <option value="$PROJECT_DIR$/EJB/src/beans/UserBean.java" />
+        <option value="$PROJECT_DIR$/WebApplication/src/UserDelServlet.java" />
+        <option value="$PROJECT_DIR$/EJB/src/entities/user/UserCourtier.java" />
+        <option value="$PROJECT_DIR$/EJB/src/entities/user/UserAdmin.java" />
+        <option value="$PROJECT_DIR$/WebApplication/src/UserAddServlet.java" />
       </list>
     </option>
   </component>
@@ -1002,7 +1001,7 @@
       <workItem from="1457969535333" duration="28000" />
       <workItem from="1458551500638" duration="6423000" />
       <workItem from="1459069765463" duration="3379000" />
-      <workItem from="1459073174783" duration="5816000" />
+      <workItem from="1459073174783" duration="6242000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1457788519360</created>
@@ -1034,11 +1033,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457952075472</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[LSG] : Ajout et remove d'utilisateur ok admin only">
+      <created>1459079360633</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1459079360633</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71977000" />
+    <option name="totallyTimeSpent" value="72403000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1076,7 +1081,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3531961" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3531961" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1104,7 +1109,8 @@
     <MESSAGE value="ça marche !" />
     <MESSAGE value="Login avec envoie du User" />
     <MESSAGE value="redirection pour palier au / qui ne passe pas par le ServLet" />
-    <option name="LAST_COMMIT_MESSAGE" value="redirection pour palier au / qui ne passe pas par le ServLet" />
+    <MESSAGE value="[LSG] : Ajout et remove d'utilisateur ok admin only" />
+    <option name="LAST_COMMIT_MESSAGE" value="[LSG] : Ajout et remove d'utilisateur ok admin only" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1402,44 +1408,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/src/UserAddServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2987697">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/javax.persistence.jar!/javax/persistence/Query.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2195572">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EJB/src/entities/user/UserAssure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7609842">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EJB/src/entities/user/UserCourtier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6572935">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EJB/src/entities/user/UserAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41827768">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1465,16 +1437,8 @@
         <state vertical-scroll-proportion="0.47803164">
           <caret line="16" column="42" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/src/UserDelServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1488,6 +1452,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EJB/src/beans/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/src/UserDelServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/src/UserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1496,18 +1476,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EJB/src/entities/user/UserCourtier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68717045">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EJB/src/entities/user/UserAssure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31428573">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EJB/src/entities/user/UserAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/src/UserAddServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/c926ef74/461fcc4b-8397-4503-8905-bef493b65993/CARATP1.CARAUSER">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EJB/src/beans/UserBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40246046">
-          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>

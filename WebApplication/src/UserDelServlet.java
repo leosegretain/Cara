@@ -28,6 +28,8 @@ public class UserDelServlet extends HttpServlet {
         String nom = request.getParameter("nom");
         CaraUser caraUser = userRemote.findByName(nom);
         userRemote.delete(caraUser);
+
+        request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
