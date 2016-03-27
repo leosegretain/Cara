@@ -16,4 +16,6 @@ public interface UserRemote {
     public void delete(CaraUser caraUser);
 
     public List<CaraUser> list();
+
+    public List<CaraUser> listAssures();
 }

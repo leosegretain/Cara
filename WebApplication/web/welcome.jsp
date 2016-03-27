@@ -22,8 +22,8 @@ Salut ${user.nom}
 <a class="button" href="/WebApplication/contratTypeAdd">Ajouter un type de contrat (Admin)</a><br/>
 <a class="button" href="/WebApplication/contratTypeDel">Supprimer un type de contrat (Admin)</a><br/>
 
-<a class="button" href="/WebApplication/contratAdd">Ajouter un contrat (Admin)</a><br/>
-<a class="button" href="/WebApplication/contratDel">Supprimer un contrat (Admin)</a><br/>
+<a class="button" href="/WebApplication/contratAdd">Ajouter un contrat (Courtier)</a><br/>
+<a class="button" href="/WebApplication/contratDel">Supprimer un contrat (Courtier)</a><br/>
 
 </body>
 </html>

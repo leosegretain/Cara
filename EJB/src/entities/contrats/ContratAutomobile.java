@@ -14,6 +14,21 @@ public class ContratAutomobile extends Contrat {
     private String immatriculation;
     private String nomConducteurPrincipal;
 
+    public ContratAutomobile() {
+    }
+
+    public ContratAutomobile(Contrat contrat) {
+
+        this.setTypeContrat(contrat.getTypeContrat());
+        this.setUserAssure(contrat.getUserAssure());
+
+        try {
+            this.setMontant(contrat.getMontant());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public String getModeleAutomobile() {
         return modeleAutomobile;
     }

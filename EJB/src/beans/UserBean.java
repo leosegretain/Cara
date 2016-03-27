@@ -38,6 +38,7 @@ public class UserBean implements UserRemote {
         persistance.persist(caraUser);
     }
 
+    @RolesAllowed("ADMIN")
     public void delete(CaraUser caraUser) {
 
         CaraUser toBeRemoved = persistance.merge(caraUser);
@@ -49,6 +50,19 @@ public class UserBean implements UserRemote {
 
         try {
             Query q = persistance.createNamedQuery("findAllUsers");
+            List<CaraUser> users = q.getResultList();
+            return users;
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
+
+    @RolesAllowed("COURTIER")
+    public List<CaraUser> listAssures() {
+
+        try {
+            Query q = persistance.createNamedQuery("findAllAssures");
             List<CaraUser> users = q.getResultList();
             return users;
         } catch (Exception e) {

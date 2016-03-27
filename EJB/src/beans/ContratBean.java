@@ -1,6 +1,6 @@
 package beans;
 
-import entities.contrats.TypeContrat;
+import entities.contrats.Contrat;
 
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
@@ -14,43 +14,44 @@ import java.util.List;
  * Created by Léo on 09/02/2016.
  */
 @PermitAll
-@Stateless(name = "ContratTypeEJB")
-public class ContratTypeBean implements ContratTypeRemote {
+@Stateless(name = "ContratEJB")
+public class ContratBean implements ContratRemote {
 
     @PersistenceContext(unitName = "Assurances-ejbPU")
     EntityManager persistance;
 
-    public TypeContrat findById(int id) {
+    @RolesAllowed("COURTIER")
+    public Contrat findById(int id) {
 
         try {
-            Query q = persistance.createNamedQuery("findContratTypeById").setParameter("id", id);
+            Query q = persistance.createNamedQuery("findContratById").setParameter("id", id);
             Object object = q.getResultList().get(0);
-            return (TypeContrat) object;
+            return (Contrat) object;
         } catch (Exception e) {
 
             return null;
         }
     }
 
-    @RolesAllowed("ADMIN")
-    public void add(TypeContrat contrat) {
+    @RolesAllowed("COURTIER")
+    public void add(Contrat contrat) {
 
         persistance.persist(contrat);
     }
 
-    @RolesAllowed("ADMIN")
-    public void delete(TypeContrat contrat) {
+    @RolesAllowed("COURTIER")
+    public void delete(Contrat contrat) {
 
-        TypeContrat toBeRemoved = persistance.merge(contrat);
+        Contrat toBeRemoved = persistance.merge(contrat);
         persistance.remove(toBeRemoved);
     }
 
-    @RolesAllowed({"ADMIN", "COURTIER"})
-    public List<TypeContrat> list() {
+    @RolesAllowed("COURTIER")
+    public List<Contrat> list() {
 
         try {
-            Query q = persistance.createNamedQuery("findAllContratsType");
-            List<TypeContrat> objects = q.getResultList();
+            Query q = persistance.createNamedQuery("findAllContrats");
+            List<Contrat> objects = q.getResultList();
             return objects;
         } catch (Exception e) {
 
