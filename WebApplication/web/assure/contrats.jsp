@@ -25,8 +25,6 @@
                         <option value="${u.id}">${u.categorieContrat} - ${u.id}</option>
                     </c:forEach>
                 </select><br/>
-
-                Montant : <input type="number" name="montant"/><br/>
             </p>
 
             Information Auto (si Contrat Automobile) :
