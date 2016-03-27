@@ -1,6 +1,8 @@
 package beans;
 
 import entities.user.CaraUser;
+import entities.user.UserAssure;
+import entities.user.UserCourtier;
 
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
@@ -58,12 +60,25 @@ public class UserBean implements UserRemote {
         }
     }
 
+    @RolesAllowed("ADMIN")
+    public List<UserCourtier> listCourtiers() {
+
+        try {
+            Query q = persistance.createNamedQuery("findAllCourtiers");
+            List<UserCourtier> users = q.getResultList();
+            return users;
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
+
     @RolesAllowed("COURTIER")
-    public List<CaraUser> listAssures() {
+    public List<UserAssure> listAssures() {
 
         try {
             Query q = persistance.createNamedQuery("findAllAssures");
-            List<CaraUser> users = q.getResultList();
+            List<UserAssure> users = q.getResultList();
             return users;
         } catch (Exception e) {
 
