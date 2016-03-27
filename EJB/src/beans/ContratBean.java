@@ -20,7 +20,7 @@ public class ContratBean implements ContratRemote {
     @PersistenceContext(unitName = "Assurances-ejbPU")
     EntityManager persistance;
 
-    @RolesAllowed("COURTIER")
+    @RolesAllowed({"COURTIER", "ASSURE"})
     public Contrat findById(int id) {
 
         try {
@@ -33,11 +33,19 @@ public class ContratBean implements ContratRemote {
         }
     }
 
+    @RolesAllowed({"COURTIER", "ASSURE"})
+    public void save(Contrat contrat) {
+
+        Contrat toBePersist = persistance.merge(contrat);
+        persistance.persist(toBePersist);
+    }
+
     @RolesAllowed("ASSURE")
     public List<Contrat> findByAssure(String nom) {
 
         try {
-            Query q = persistance.createNamedQuery("findContratsByAssure").setParameter("nom", nom);
+            Query q = persistance.createNamedQuery("findContratsByAssure")
+                    .setParameter("nom", nom);
             List<Contrat> contrats = q.getResultList();
             return contrats;
         } catch (Exception e) {
@@ -46,7 +54,21 @@ public class ContratBean implements ContratRemote {
         }
     }
 
-    @RolesAllowed("COURTIER")
+    @RolesAllowed("ASSURE")
+    public List<Contrat> findEnAttenteByAssure(String nom) {
+
+        try {
+            Query q = persistance.createNamedQuery("findContratsEnAttenteByAssure")
+                    .setParameter("nom", nom);
+            List<Contrat> contrats = q.getResultList();
+            return contrats;
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
+
+    @RolesAllowed({"COURTIER", "ASSURE"})
     public void add(Contrat contrat) {
 
         persistance.persist(contrat);

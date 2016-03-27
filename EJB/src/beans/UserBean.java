@@ -85,4 +85,17 @@ public class UserBean implements UserRemote {
             return null;
         }
     }
+
+    @RolesAllowed("COURTIER")
+    public List<UserAssure> listAssuresByCourtier(String nom) {
+
+        try {
+            Query q = persistance.createNamedQuery("findAllAssuresByCourtier").setParameter("nom", nom);
+            List<UserAssure> users = q.getResultList();
+            return users;
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
 }

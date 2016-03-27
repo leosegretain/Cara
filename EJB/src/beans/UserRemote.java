@@ -21,5 +21,7 @@ public interface UserRemote {
 
     public List<UserAssure> listAssures();
 
+    public List<UserAssure> listAssuresByCourtier(String nom);
+
     public List<UserCourtier> listCourtiers();
 }

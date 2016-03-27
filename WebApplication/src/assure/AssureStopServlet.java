@@ -30,17 +30,15 @@ public class AssureStopServlet extends HttpServlet {
     @EJB(beanName = "ContratEJB")
     private beans.ContratRemote contratRemote;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int contratId = Integer.parseInt(request.getParameter("contrat"));
+        Contrat contrat = contratRemote.findById(contratId);
+        contrat.setDemandeArret(true);
+        contratRemote.save(contrat);
 
-        CaraUser user = (CaraUser) request.getSession().getAttribute("user");
-
-        if (user != null) {
-
-            List<Contrat> contrats = contratRemote.findByAssure(user.getNom());
-            request.setAttribute("contrats", contrats);
-            request.getRequestDispatcher("contrats.jsp").forward(request, response);
-        }
+        request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 }

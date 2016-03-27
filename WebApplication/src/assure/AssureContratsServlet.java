@@ -1,6 +1,7 @@
 package assure;
 
 import entities.contrats.Contrat;
+import entities.contrats.TypeContrat;
 import entities.user.CaraUser;
 import entities.user.UserAdmin;
 import entities.user.UserAssure;
@@ -27,11 +28,11 @@ import java.util.List;
                 rolesAllowed = {"ASSURE"}))
 public class AssureContratsServlet extends HttpServlet {
 
-    @EJB(beanName = "UserEJB")
-    private beans.UserRemote userRemote;
-
     @EJB(beanName = "ContratEJB")
     private beans.ContratRemote contratRemote;
+
+    @EJB(beanName = "ContratTypeEJB")
+    private beans.ContratTypeRemote contratTypeRemote;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 
@@ -41,8 +42,14 @@ public class AssureContratsServlet extends HttpServlet {
 
         if (user != null) {
 
+            List<TypeContrat> types = contratTypeRemote.list();
             List<Contrat> contrats = contratRemote.findByAssure(user.getNom());
+            List<Contrat> contratsEnAttente = contratRemote.findEnAttenteByAssure(user.getNom());
+
+            request.setAttribute("contratTypes", types);
             request.setAttribute("contrats", contrats);
+            request.setAttribute("contratsEnAttente", contratsEnAttente);
+
             request.getRequestDispatcher("contrats.jsp").forward(request, response);
         }
     }

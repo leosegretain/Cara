@@ -14,7 +14,8 @@ import javax.persistence.*;
         @NamedQuery(name = "findUserByName", query = "SELECT u FROM CaraUser u where u.nom = :nom"),
         @NamedQuery(name = "findAllUsers", query = "select u from CaraUser u"),
         @NamedQuery(name = "findAllCourtiers", query = "select u from UserCourtier u"),
-        @NamedQuery(name = "findAllAssures", query = "select u from UserAssure u")
+        @NamedQuery(name = "findAllAssures", query = "select u from UserAssure u"),
+        @NamedQuery(name = "findAllAssuresByCourtier", query = "select u from UserAssure u where u.courtier.nom = :nom")
 })
 public class CaraUser {
 
