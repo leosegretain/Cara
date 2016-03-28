@@ -1,6 +1,7 @@
 package courtier;
 
 import entities.contrats.Contrat;
+import websocket.NotificationSessionHandler;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -35,6 +36,8 @@ public class CourtierSupprimerServlet extends HttpServlet {
 
         Contrat contrat = contratRemote.findById(contratId);
         contratRemote.delete(contrat);
+
+        NotificationSessionHandler.sendNotification(contratId);
 
         request.getRequestDispatcher("/welcome.jsp").forward(request, response);
     }

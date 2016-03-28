@@ -11,6 +11,8 @@
 <html>
 <head>
     <title>Contrats de ${user.nom}</title>
+    <script src="/jquery-2.2.2.min.js"></script>
+    <script src="/websocket.js"></script>
 </head>
 <body>
 
@@ -89,6 +91,7 @@
                 <th>Catégorie</th>
                 <th>Montant</th>
                 <th>Etat</th>
+                <th></th>
             </thead>
 
             <tbody>
@@ -99,11 +102,14 @@
                     <td>${c.typeContrat.categorieContrat}</td>
                     <td>${c.montant}</td>
                     <td>${c.etat}</td>
+                    <td><button onclick="connect(${c.id});">Etre notifié</button></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </p>
+
+    <div id="notification" style="background-color: azure; display: none;"></div>
 
 </body>
 </html>
