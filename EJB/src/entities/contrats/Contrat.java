@@ -1,6 +1,7 @@
 package entities.contrats;
 
 import entities.user.CaraUser;
+import entities.user.UserAssure;
 
 import javax.persistence.*;
 
@@ -14,7 +15,8 @@ import javax.persistence.*;
         @NamedQuery(name = "findContratById", query = "SELECT u FROM Contrat u where u.id = :id"),
         @NamedQuery(name = "findAllContrats", query = "select u from Contrat u"),
         @NamedQuery(name = "findContratsByAssure", query = "select u from Contrat u where u.userAssure.nom = :nom and u.isDemandeArret = false and u.isEnAttente = false"),
-        @NamedQuery(name = "findContratsEnAttenteByAssure", query = "select u from Contrat u where u.userAssure.nom = :nom and u.isDemandeArret = true or u.isEnAttente = true")
+        @NamedQuery(name = "findContratsEnAttenteByAssure", query = "select u from Contrat u where u.userAssure.nom = :nom and u.isDemandeArret = true or u.isEnAttente = true"),
+        @NamedQuery(name = "findAllContratsActionRequiseByCourtier", query = "select u from Contrat u where u.userAssure.courtier.nom = :nom and u.isDemandeArret = true or u.isEnAttente = true")
 })
 public class Contrat {
 
@@ -26,7 +28,7 @@ public class Contrat {
     private double montant;
 
     @ManyToOne
-    private CaraUser userAssure;
+    private UserAssure userAssure;
 
     @ManyToOne
     private TypeContrat typeContrat;
@@ -60,11 +62,11 @@ public class Contrat {
         this.montant = montant;
     }
 
-    public CaraUser getUserAssure() {
+    public UserAssure getUserAssure() {
         return userAssure;
     }
 
-    public void setUserAssure(CaraUser userAssure) {
+    public void setUserAssure(UserAssure userAssure) {
         this.userAssure = userAssure;
     }
 

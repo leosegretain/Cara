@@ -49,7 +49,7 @@ public class ContratAddServlet extends HttpServlet {
         CaraUser caraUser = userRemote.findByName(assureName);
 
         contrat.setTypeContrat(typeContrat);
-        contrat.setUserAssure(caraUser);
+        contrat.setUserAssure((UserAssure) caraUser);
 
         try {
             contrat.setMontant(montant);

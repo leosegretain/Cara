@@ -81,11 +81,24 @@ public class ContratBean implements ContratRemote {
         persistance.remove(toBeRemoved);
     }
 
-    @RolesAllowed("COURTIER")
+    @RolesAllowed({"COURTIER"})
     public List<Contrat> list() {
 
         try {
             Query q = persistance.createNamedQuery("findAllContrats");
+            List<Contrat> objects = q.getResultList();
+            return objects;
+        } catch (Exception e) {
+
+            return null;
+        }
+    }
+
+    @RolesAllowed({"COURTIER"})
+    public List<Contrat> listActionRequise(String nom) {
+
+        try {
+            Query q = persistance.createNamedQuery("findAllContratsActionRequiseByCourtier").setParameter("nom", nom);
             List<Contrat> objects = q.getResultList();
             return objects;
         } catch (Exception e) {

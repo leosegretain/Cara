@@ -28,7 +28,7 @@ Salut ${user.nom}
 <a class="button" href="/assure/contrats">Liste contrats (Assure)</a><br/><br/>
 
 <a class="button" href="/courtier/clients">Clients (Courtier)</a><br/>
-<a class="button" href="/courtier/contrats">Contrats en attente (Courtier)</a><br/><br/>
+<a class="button" href="/courtier/actions">Contrats en attente (Courtier)</a><br/><br/>
 
 </body>
 </html>
