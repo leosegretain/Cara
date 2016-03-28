@@ -2,6 +2,7 @@ package assure;
 
 import entities.contrats.*;
 import entities.user.CaraUser;
+import entities.user.UserAssure;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -43,7 +44,7 @@ public class AssureDemandeServlet extends HttpServlet {
         CaraUser user = (CaraUser) request.getSession().getAttribute("user");
 
         contrat.setTypeContrat(typeContrat);
-        contrat.setUserAssure(user);
+        contrat.setUserAssure((UserAssure) user);
         contrat.setEnAttente(true);
 
         switch (typeContrat.getCategorieContrat().name()) {

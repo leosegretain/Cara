@@ -44,7 +44,7 @@
 
             Information Habitation (si Contrat Habitation) :
             <p>
-                Montant maximum : <input type="number" name="montantMax/><br/>
+                Montant maximum : <input type="number" name="montantMax"/><br/>
                 Adresse : <input type="text" name="adresse"/><br/>
             </p>
 
@@ -102,7 +102,11 @@
                     <td>${c.typeContrat.categorieContrat}</td>
                     <td>${c.montant}</td>
                     <td>${c.etat}</td>
-                    <td><button onclick="connect(${c.id});">Etre notifié</button></td>
+                    <td>
+                        <c:if test="${c.etatNumber == 0}">
+                            <button onclick="connect(${c.id});">Etre notifié</button>
+                        </c:if>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

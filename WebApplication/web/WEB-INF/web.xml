@@ -60,6 +60,10 @@
         <servlet-name>LogoutServlet</servlet-name>
     </servlet>
 
+    <servlet>
+        <servlet-name>CourtierActionRequiseServlet</servlet-name>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/welcome</url-pattern>
@@ -83,6 +87,11 @@
     <servlet-mapping>
         <servlet-name>ContratDelServlet</servlet-name>
         <url-pattern>/contrat/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CourtierActionRequiseServlet</servlet-name>
+        <url-pattern>/courtier/actions</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

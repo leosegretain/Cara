@@ -22,4 +22,6 @@ public interface ContratRemote {
     public void delete(Contrat contrat);
 
     public List<Contrat> list();
+
+    public List<Contrat> listActionRequise(String nom);
 }
