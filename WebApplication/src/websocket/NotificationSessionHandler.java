@@ -7,8 +7,6 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by Léo on 28/03/2016.
@@ -24,7 +22,7 @@ public class NotificationSessionHandler {
         try {
             Session s = sessions.get(contratId);
 
-            if(s != null){
+            if (s != null) {
                 s.getBasicRemote().sendText("Votre contrat vient d'être cloturé par votre courtier");
             }
         } catch (IOException e) {
@@ -41,9 +39,9 @@ public class NotificationSessionHandler {
     @OnClose
     public void closedConnection(Session session) {
 
-        for(Map.Entry<Integer, Session> entry : sessions.entrySet()) {
+        for (Map.Entry<Integer, Session> entry : sessions.entrySet()) {
 
-            if(entry.getValue().equals(session))
+            if (entry.getValue().equals(session))
                 sessions.remove(entry.getKey());
         }
     }
@@ -51,9 +49,9 @@ public class NotificationSessionHandler {
     @OnError
     public void error(Session session, Throwable t) {
 
-        for(Map.Entry<Integer, Session> entry : sessions.entrySet()) {
+        for (Map.Entry<Integer, Session> entry : sessions.entrySet()) {
 
-            if(entry.getValue().equals(session))
+            if (entry.getValue().equals(session))
                 sessions.remove(entry.getKey());
         }
     }
