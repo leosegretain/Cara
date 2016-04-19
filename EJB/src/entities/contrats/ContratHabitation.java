@@ -13,9 +13,6 @@ public class ContratHabitation extends Contrat {
     private double montantAssureMax;
     private String adresse;
 
-    public ContratHabitation() {
-    }
-
     public ContratHabitation(Contrat contrat) {
 
         this.setTypeContrat(contrat.getTypeContrat());
